@@ -3,8 +3,8 @@ import Container from "components/Container"
 import React from "react"
 import useMethods from "use-methods"
 
-// // TODO: Add event listener
 // ;(() => {
+// 	// TODO: Add event listener
 // 	document.body.classList.add("debug-css")
 // })()
 
@@ -39,7 +39,7 @@ const reducer = state => ({
 })
 
 const IconButton = ({ className, icon: Icon, ...props }) => (
-	<button className={`p-2 text-indigo-500 disabled:text-indigo-300 focus:bg-indigo-100 hover:bg-indigo-100 active:bg-indigo-200 rounded-full focus:outline-none trans-300 ${className || ""}`.trim()} {...props}>
+	<button className={`p-2 text-indigo-500 disabled:text-indigo-200 focus:bg-indigo-100 hover:bg-indigo-100 active:bg-indigo-200 rounded-full focus:outline-none trans-300 ${className || ""}`.trim()} {...props}>
 		<Icon className="w-6 h-6" />
 	</button>
 )
@@ -50,7 +50,7 @@ const App = props => {
 	return (
 		<Container>
 			{/* Header */}
-			<div className="mb-12 flex flex-row justify-between items-center">
+			<div className="flex flex-row justify-between items-center">
 				{/* TODO */}
 				<div />
 				<div className="-mx-1 flex flex-row">
@@ -77,6 +77,7 @@ const App = props => {
 				</div>
 			</div>
 			{/* Cards */}
+			<div className="h-12" />
 			<div className={`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-${state.itemsShown} gap-6`}>
 				{[...new Array(60)].map((_, index) => (
 					<button key={index} className="pb-3/4 relative bg-indigo-100 hover:bg-indigo-200 rounded-lg focus:outline-none focus:shadow-outline trans-150">
