@@ -69,38 +69,41 @@ const App = props => {
 				<div className="flex flex-row justify-center">
 					<div className="px-6 w-full max-w-5xl">
 						<div className="flex flex-row justify-between items-center">
-							<p className="flex flex-row items-center font-semibold text-lg tracking-px text-gray-800">
-								<button className="text-blue-500 hover:text-blue-500 trans-150">
-									Home
-								</button>
-								<Hero.CheveronRight className="p-px w-6 h-6 text-gray-400" />
-								<button className="text-blue-500 hover:text-blue-500 trans-150">
-									Folder
-								</button>
-								<Hero.CheveronRight className="p-px w-6 h-6 text-gray-400" />
-								<button className="text-blue-500 hover:text-blue-500 trans-150">
-									Nested folder
-								</button>
-							</p>
+							<div className="flex flex-row items-center">
+								<Hero.CheveronLeftOutline className="mr-3 p-px w-8 h-8 text-blue-500" />
+								<p className="flex flex-row items-center font-semibold text-lg tracking-px text-gray-800">
+									<button className="text-blue-500 hover:text-blue-500 trans-150">
+										Home
+									</button>
+									<Hero.CheveronRightSolid className="p-px w-6 h-6 text-gray-400" />
+									<button className="text-blue-500 hover:text-blue-500 trans-150">
+										Folder
+									</button>
+									<Hero.CheveronRightSolid className="p-px w-6 h-6 text-gray-400" />
+									<button className="text-blue-500 hover:text-blue-500 trans-150">
+										Nested folder
+									</button>
+								</p>
+							</div>
 							<div className="-mx-1 flex flex-row">
 								<ButtonIcon
 									className="hidden lg:block"
-									icon={Hero.Minus}
+									icon={Hero.MinusSolid}
 									disabled={state.itemsShown === ITEMS_SHOWN_MIN}
 									onClick={dispatch.showLessItems}
 								/>
 								<ButtonIcon
 									className="hidden lg:block"
-									icon={Hero.Plus}
+									icon={Hero.PlusSolid}
 									disabled={state.itemsShown === ITEMS_SHOWN_MAX}
 									onClick={dispatch.showMoreItems}
 								/>
 								<ButtonIcon
-									icon={!state.sortAscending ? Hero.SortDescending : Hero.SortAscending}
+									icon={!state.sortAscending ? Hero.SortDescendingSolid : Hero.SortAscendingSolid}
 									onClick={dispatch.toggleSortDirection}
 								/>
 								<ButtonIcon
-									icon={Hero.SwitchVertical}
+									icon={Hero.SwitchVerticalSolid}
 									// TODO
 								/>
 							</div>
@@ -115,14 +118,14 @@ const App = props => {
 					<div className="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3">
 						{["This is a really long folder name", "Second folder", "Third folder", "Fourth folder", "Fifth folder", "Sixth folder", "Eigth folder", "Ninth folder"].map((each, index) => (
 							<button key={index} className="px-4 py-3 flex flex-row items-center bg-white rounded-lg shadow-hero">
-								<Hero.Folder className="mr-3 p-px flex-shrink-0 w-6 h-6 text-blue-500" />
+								<Hero.FolderSolid className="mr-3 p-px flex-shrink-0 w-6 h-6 text-blue-500" />
 								<p className="whitespace-pre truncate font-semibold tracking-px text-gray-800">
 									{each}
 								</p>
 							</button>
 						))}
 						<button className="px-4 py-3 flex flex-row items-center bg-gray-100 rounded-lg">
-							<Hero.Plus className="mr-3 p-px flex-shrink-0 w-6 h-6 text-blue-500" />
+							<Hero.PlusSolid className="mr-3 p-px flex-shrink-0 w-6 h-6 text-blue-500" />
 							<p className="whitespace-pre truncate font-semibold tracking-px text-blue-500">
 								Add a folder
 							</p>
@@ -133,7 +136,7 @@ const App = props => {
 						{[...new Array(60)].map((_, index) => (
 							<button key={index} className="pb-4/5 relative bg-white rounded-xl shadow-hero overflow-hidden">
 								<div className="absolute inset-0 flex flex-row justify-center">
-									<img class="py-2 object-contain object-top" src={editorSrc} alt="" />
+									<img className="py-2 object-contain object-top" src={editorSrc} alt="" />
 								</div>
 							</button>
 						))}
