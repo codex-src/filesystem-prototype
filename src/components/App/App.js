@@ -61,7 +61,6 @@ const App = props => {
 	}, [])
 
 	return (
-		// <Container className="bg-white">
 		<div>
 
 			<div className="pt-32" />
@@ -105,12 +104,6 @@ const App = props => {
 									icon={Hero.SwitchVertical}
 									// TODO
 								/>
-								{/* <div className="w-4 hidden lg:block" /> */}
-								{/* <IconButton */}
-								{/* 	className="hidden lg:block" */}
-								{/* 	icon={Hero.Upload} */}
-								{/* 	// TODO */}
-								{/* /> */}
 							</div>
 						</div>
 						<div className="mt-3 grid grid-cols-1 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3">
@@ -132,8 +125,8 @@ const App = props => {
 					<div className={`mt-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-${state.itemsShown} gap-6`}>
 						{[...new Array(60)].map((_, index) => (
 							<button key={index} className="pb-5/4 relative bg-white rounded-lg focus:outline-none shadow-hero overflow-hidden trans-150">
-								<div className="py-2 absolute inset-0 flex flex-row justify-center">
-									<img class="object-contain object-top" src={editorSrc} alt="" />
+								<div className="absolute inset-0 flex flex-row justify-center">
+									<img class="py-2 object-contain object-top" src={editorSrc} alt="" />
 								</div>
 							</button>
 						))}
