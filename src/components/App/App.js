@@ -49,7 +49,7 @@ const reducer = state => ({
 })
 
 const IconButton = ({ icon: Icon, ...props }) => (
-	<button className="p-2 text-indigo-500 focus:bg-indigo-100 focus:outline-none hover:bg-indigo-100 active:bg-indigo-200 rounded-full trans-300" {...props}>
+	<button className="p-2 text-indigo-500 focus:bg-indigo-100 hover:bg-indigo-100 active:bg-indigo-200 rounded-full focus:outline-none trans-300" {...props}>
 		<Icon className="w-6 h-6" />
 	</button>
 )
@@ -88,11 +88,11 @@ const App = props => {
 			{/* Cards */}
 			<div className={`grid grid-cols-${state.itemsShown} gap-6`}>
 				{[...new Array(20)].map((_, index) => (
-					<div key={index} className="pb-3/4 relative">
-						<div className="absolute inset-0 bg-indigo-500 rounded-lg">
+					<button key={index} className="pb-3/4 relative bg-indigo-100 hover:bg-indigo-200 rounded-lg focus:outline-none focus:shadow-outline trans-150">
+						<div className="absolute inset-0">
 
 						</div>
-					</div>
+					</button>
 				))}
 			</div>
 		</Container>
