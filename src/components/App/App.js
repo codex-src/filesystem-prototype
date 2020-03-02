@@ -11,8 +11,8 @@ import editorSrc from "images/editor.png" // Tell webpack this JS file uses this
 
 const ITEMS_SHOWN_DEFAULT = 3
 
-const ITEMS_SHOWN_MIN = 2
-const ITEMS_SHOWN_MAX = 4
+const ITEMS_SHOWN_MIN = 3
+const ITEMS_SHOWN_MAX = 5
 
 const initialState = {
 	sortAscending: false,
@@ -70,8 +70,8 @@ const App = props => {
 				<div className="flex flex-row justify-center">
 					<div className="px-6 w-full max-w-5xl">
 
-						<div className="flex flex-row justify-between items-center">
-							<p className="-mx-1 flex flex-row items-center font-semibold text-xl tracking-px text-gray-800">
+						<div className="mb-3 flex flex-row justify-between items-center">
+							<p className="-mx-1 flex flex-row items-center font-semibold text-lg tracking-px text-gray-800">
 								<span className="mx-1 text-blue-500 hover:text-blue-500 trans-150 cursor-pointer">
 									Folder
 								</span>
@@ -101,10 +101,10 @@ const App = props => {
 									icon={!state.sortAscending ? Hero.SortDescending : Hero.SortAscending}
 									onClick={dispatch.toggleSortDirection}
 								/>
-								{/* <IconButton */}
-								{/* 	icon={Hero.Folder} */}
-								{/* 	// TODO */}
-								{/* /> */}
+								<IconButton
+									icon={Hero.SwitchVertical}
+									// TODO
+								/>
 								{/* <div className="w-4 hidden lg:block" /> */}
 								{/* <IconButton */}
 								{/* 	className="hidden lg:block" */}
@@ -113,12 +113,11 @@ const App = props => {
 								{/* /> */}
 							</div>
 						</div>
-						<div className="h-3" />
-						<div className="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3">
+						<div className="mt-3 grid grid-cols-1 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3">
 							{["Folder", "Second folder", "Third folder"].map((each, index) => (
 								<div key={index} className="px-4 py-3 flex flex-row items-center bg-white rounded-lg shadow-hero">
 									<Hero.Folder className="mr-3 p-px w-6 h-6 text-blue-500" />
-									<p className="whitespace-pre truncate font-semibold text-px tracking-px text-gray-800">
+									<p className="whitespace-pre truncate font-semibold tracking-px text-gray-800">
 										{each}
 									</p>
 								</div>
@@ -130,8 +129,7 @@ const App = props => {
 
 			<div className="flex flex-row justify-center">
 				<div className="px-6 w-full max-w-5xl">
-					<div className="h-6" />
-					<div className={`grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-${state.itemsShown} gap-6`}>
+					<div className={`mt-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-${state.itemsShown} gap-6`}>
 						{[...new Array(60)].map((_, index) => (
 							<button key={index} className="pb-5/4 relative bg-white rounded-lg focus:outline-none shadow-hero overflow-hidden trans-150">
 								<div className="py-2 absolute inset-0 flex flex-row justify-center">
