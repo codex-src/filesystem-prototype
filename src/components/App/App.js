@@ -1,8 +1,8 @@
 import React from "react"
 
-;(() => {
-	document.body.classList.add("debug-css")
-})()
+// ;(() => {
+// 	document.body.classList.add("debug-css")
+// })()
 
 const Container = props => (
 	<div className="mx-6 my-32 flex flex-row justify-center h-full">
@@ -14,7 +14,15 @@ const Container = props => (
 
 const App = props => (
 	<Container>
-		Hello, world!
+		<div className="grid grid-cols-3 gap-6">
+			{[...new Array(20)].map((_, index) => (
+				<div key={index} className="pb-3/4 relative">
+					<div className="absolute inset-0 bg-gray-100 rounded-lg">
+
+					</div>
+				</div>
+			))}
+		</div>
 	</Container>
 )
 
