@@ -39,7 +39,7 @@ const reducer = state => ({
 })
 
 const IconButton = ({ className, icon: Icon, ...props }) => (
-	<button className={`p-2 text-blue-500 disabled:text-blue-200 focus:bg-blue-100 hover:bg-blue-100 active:bg-blue-200 rounded-full focus:outline-none trans-300 ${className || ""}`.trim()} {...props}>
+	<button className={`p-2 text-blue-500 disabled:text-gray-500 disabled:bg-transparent focus:bg-blue-100 hover:bg-blue-100 active:bg-blue-200 rounded-full focus:outline-none trans-300 ${className || ""}`.trim()} {...props}>
 		<Icon className="p-px w-6 h-6" />
 	</button>
 )
@@ -97,7 +97,7 @@ const App = props => {
 			<div className="h-6" />
 			<div className="grid grid-cols-6 gap-3">
 				{[...new Array(3)].map((_, index) => (
-					<div className="px-4 py-3 flex flex-row items-center bg-white rounded-lg shadow-hero">
+					<div className="px-4 py-3 flex flex-row items-center bg-gray-50 rounded-lg shadow-hero">
 						<Hero.Folder className="mr-3 w-6 h-6 text-blue-500" />
 						<p className="font-semibold tracking-px leading-none text-gray-800">
 							Folder
@@ -110,7 +110,7 @@ const App = props => {
 			<div className="h-6" />
 			<div className={`grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-${state.itemsShown} gap-6`}>
 				{[...new Array(60)].map((_, index) => (
-					<button key={index} className="pb-3/4 relative bg-white rounded-xl focus:outline-none shadow-hero trans-150">
+					<button key={index} className="pb-3/4 relative bg-gray-50 rounded-xl focus:outline-none shadow-hero trans-150">
 						<div className="absolute inset-0">
 
 						</div>
