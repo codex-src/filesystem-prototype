@@ -1,4 +1,5 @@
 import React from "react"
+import useMethods from "use-methods"
 
 // ;(() => {
 // 	document.body.classList.add("debug-css")
@@ -12,18 +13,60 @@ const Container = props => (
 	</div>
 )
 
-const App = props => (
-	<Container>
-		<div className="grid grid-cols-3 gap-6">
-			{[...new Array(20)].map((_, index) => (
-				<div key={index} className="pb-3/4 relative">
-					<div className="absolute inset-0 bg-gray-100 rounded-lg">
+/*
 
-					</div>
+New folder (folder)
+Upload (upload)
+Sort ascending / sort descending (sort-ascending, sort-descending)
+Show more documents / show less documents (plus-circle, plus-minus)
+
+*/
+
+const initialState = {
+	itemsShown: 4,
+}
+
+const reducer = state => ({
+	showLessItems() {
+		if (state.itemsShown === 1) {
+			// No-op
+			return
+		}
+		state.itemsShown--
+	},
+	showMoreItems() {
+		if (state.itemsShown === 4) {
+			// No-op
+			return
+		}
+		state.itemsShown++
+	},
+})
+
+const App = props => {
+	const [state, dispatch] = useMethods(reducer, initialState)
+
+	return (
+		<Container>
+			<div className="flex flex-row">
+				<div>
+					{/* ... */}
 				</div>
-			))}
-		</div>
-	</Container>
-)
+				<div>
+					{/* ... */}
+				</div>
+			</div>
+			<div className={`grid grid-cols-${state.itemsShown} gap-6`}>
+				{[...new Array(20)].map((_, index) => (
+					<div key={index} className="pb-3/4 relative">
+						<div className="absolute inset-0 bg-gray-200 rounded-lg">
+
+						</div>
+					</div>
+				))}
+			</div>
+		</Container>
+	)
+}
 
 export default App
