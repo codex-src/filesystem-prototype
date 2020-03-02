@@ -1,0 +1,7 @@
+export { ReactComponent as Download } from "./download.svg"
+export { ReactComponent as Folder } from "./folder.svg"
+export { ReactComponent as Minus } from "./minus.svg"
+export { ReactComponent as Plus } from "./plus.svg"
+export { ReactComponent as SortAscending } from "./sort-ascending.svg"
+export { ReactComponent as SortDescending } from "./sort-descending.svg"
+export { ReactComponent as Upload } from "./upload.svg"
