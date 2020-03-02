@@ -65,20 +65,20 @@ const App = props => {
 
 			<div className="pt-32" />
 
-			<div ref={ref} className="-mt-6 py-6 sticky inset-x-0 top-0 bg-white z-30 trans-300">
+			<div ref={ref} className="-mt-3 py-3 sticky inset-x-0 top-0 bg-white z-30 trans-300">
 				<div className="flex flex-row justify-center">
 					<div className="px-6 w-full max-w-5xl">
 						<div className="flex flex-row justify-between items-center">
-							<p className="-mx-1 flex flex-row items-center font-semibold text-lg tracking-px text-gray-800">
-								<span className="mx-1 text-blue-500 hover:text-blue-500 trans-150 cursor-pointer">
+							<p className="flex flex-row items-center font-semibold tracking-px text-gray-800">
+								<span className="text-blue-500 hover:text-blue-500 trans-150 cursor-pointer">
 									Folder
 								</span>
-								<Hero.CheveronRight className="p-px w-6 h-6 text-gray-500" />
-								<span className="mx-1 text-blue-500 hover:text-blue-500 trans-150 cursor-pointer">
+								<span className="mx-2 text-gray-500">/</span>
+								<span className="text-blue-500 hover:text-blue-500 trans-150 cursor-pointer">
 									Nested folder
 								</span>
-								<Hero.CheveronRight className="p-px w-6 h-6 text-gray-500" />
-								<span className="mx-1 text-blue-500 hover:text-blue-500 trans-150 cursor-pointer">
+								<span className="mx-2 text-gray-500">/</span>
+								<span className="text-blue-500 hover:text-blue-500 trans-150 cursor-pointer">
 									Deeply nested folder
 								</span>
 							</p>
@@ -123,9 +123,9 @@ const App = props => {
 					{/* 	))} */}
 					{/* </div> */}
 					<div className="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3">
-						{["Folder", "Second folder", "Third folder", "Fourth folder", "Fifth folder", "Sixth folder", "Eigth folder", "Ninth folder", "Tenth folder", ].map((each, index) => (
+						{["This is a really long folder name", "Second folder", "Third folder", "Fourth folder", "Fifth folder", "Sixth folder", "Eigth folder", "Ninth folder", "Tenth folder", ].map((each, index) => (
 							<div key={index} className="px-4 py-3 flex flex-row items-center bg-white rounded-lg shadow-hero">
-								<Hero.Folder className="mr-3 p-px w-6 h-6 text-blue-500" />
+								<Hero.Folder className="mr-3 p-px flex-shrink-0 w-6 h-6 text-blue-500" />
 								<p className="whitespace-pre truncate font-semibold tracking-px text-gray-800">
 									{each}
 								</p>
