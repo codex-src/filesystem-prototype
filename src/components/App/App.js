@@ -8,10 +8,10 @@ import useMethods from "use-methods"
 // 	document.body.classList.add("debug-css")
 // })()
 
-const ITEMS_SHOWN_DEFAULT = 3
+const ITEMS_SHOWN_DEFAULT = 4
 
-const ITEMS_SHOWN_MIN = 2
-const ITEMS_SHOWN_MAX = 4
+const ITEMS_SHOWN_MIN = 3
+const ITEMS_SHOWN_MAX = 6
 
 const initialState = {
 	sortAscending: false,
@@ -70,15 +70,21 @@ const App = props => {
 						icon={!state.sortAscending ? Hero.SortDescending : Hero.SortAscending}
 						onClick={dispatch.toggleSortDirection}
 					/>
-					<IconButton
-						icon={Hero.Folder}
-						// TODO
-					/>
+					{/* <IconButton */}
+					{/* 	icon={Hero.Folder} */}
+					{/* 	// TODO */}
+					{/* /> */}
+					{/* <div className="w-4 hidden lg:block" /> */}
+					{/* <IconButton */}
+					{/* 	className="hidden lg:block" */}
+					{/* 	icon={Hero.Upload} */}
+					{/* 	// TODO */}
+					{/* /> */}
 				</div>
 			</div>
 			{/* Cards */}
 			<div className="h-12" />
-			<div className={`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-${state.itemsShown} gap-6`}>
+			<div className={`grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-${state.itemsShown} gap-6`}>
 				{[...new Array(60)].map((_, index) => (
 					<button key={index} className="pb-3/4 relative bg-indigo-100 hover:bg-indigo-200 rounded-lg focus:outline-none focus:shadow-outline trans-150">
 						<div className="absolute inset-0">
