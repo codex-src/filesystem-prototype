@@ -2,16 +2,17 @@ import * as Hero from "components/Icons"
 // import Container from "components/Container"
 import React from "react"
 import useMethods from "use-methods"
+import editorSrc from "images/editor.png" // Tell webpack this JS file uses this image
 
 // ;(() => {
 // 	// TODO: Add event listener
 // 	document.body.classList.add("debug-css")
 // })()
 
-const ITEMS_SHOWN_DEFAULT = 4
+const ITEMS_SHOWN_DEFAULT = 3
 
-const ITEMS_SHOWN_MIN = 3
-const ITEMS_SHOWN_MAX = 7
+const ITEMS_SHOWN_MIN = 2
+const ITEMS_SHOWN_MAX = 4
 
 const initialState = {
 	sortAscending: false,
@@ -132,9 +133,9 @@ const App = props => {
 					<div className="h-6" />
 					<div className={`grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-${state.itemsShown} gap-6`}>
 						{[...new Array(60)].map((_, index) => (
-							<button key={index} className="pb-3/4 relative bg-white rounded-xl focus:outline-none shadow-hero trans-150">
-								<div className="absolute inset-0">
-
+							<button key={index} className="pb-3/4 relative bg-white rounded-lg focus:outline-none shadow-hero overflow-hidden trans-150">
+								<div className="absolute inset-0 flex flex-row justify-center items-center">
+									<img src={editorSrc} alt="" />
 								</div>
 							</button>
 						))}
