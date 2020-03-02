@@ -71,17 +71,17 @@ const App = props => {
 					<div className="px-6 w-full max-w-5xl">
 
 						<div className="flex flex-row justify-between items-center">
-							<p className="flex flex-row items-center font-semibold text-lg tracking-px leading-none text-gray-800">
-								<span className="-mx-2 px-3 py-1 text-blue-500 hover:bg-blue-100 rounded-full trans-150">
-									Home
+							<p className="-mx-1 flex flex-row items-center font-semibold text-xl tracking-px text-gray-800">
+								<span className="mx-1 text-blue-500 hover:text-blue-500 trans-150 cursor-pointer">
+									Folder
 								</span>
-								<Hero.CheveronRight className="w-6 h-6 text-gray-500" />
-								<span className="-mx-2 px-3 py-1 text-blue-500 hover:bg-blue-100 rounded-full trans-150">
-									Directory
+								<Hero.CheveronRight className="p-px w-6 h-6 text-gray-500" />
+								<span className="mx-1 text-blue-500 hover:text-blue-500 trans-150 cursor-pointer">
+									Nested folder
 								</span>
-								<Hero.CheveronRight className="w-6 h-6 text-gray-500" />
-								<span className="-mx-2 px-3 py-1 text-blue-500 hover:bg-blue-100 rounded-full trans-150">
-									Subdirectory
+								<Hero.CheveronRight className="p-px w-6 h-6 text-gray-500" />
+								<span className="mx-1 text-blue-500 hover:text-blue-500 trans-150 cursor-pointer">
+									Deeply nested folder
 								</span>
 							</p>
 							<div className="-mx-1 flex flex-row">
@@ -114,11 +114,11 @@ const App = props => {
 							</div>
 						</div>
 						<div className="h-3" />
-						<div className="grid grid-cols-5 gap-6">
+						<div className="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3">
 							{["Folder", "Second folder", "Third folder"].map((each, index) => (
 								<div key={index} className="px-4 py-3 flex flex-row items-center bg-white rounded-lg shadow-hero">
-									<Hero.Folder className="mr-3 w-6 h-6 text-blue-500" />
-									<p className="whitespace-pre truncate font-semibold tracking-px leading-none text-gray-800">
+									<Hero.Folder className="mr-3 p-px w-6 h-6 text-blue-500" />
+									<p className="whitespace-pre truncate font-semibold text-px tracking-px text-gray-800">
 										{each}
 									</p>
 								</div>
@@ -133,9 +133,9 @@ const App = props => {
 					<div className="h-6" />
 					<div className={`grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-${state.itemsShown} gap-6`}>
 						{[...new Array(60)].map((_, index) => (
-							<button key={index} className="pb-3/4 relative bg-white rounded-lg focus:outline-none shadow-hero overflow-hidden trans-150">
-								<div className="absolute inset-0 flex flex-row justify-center items-center">
-									<img src={editorSrc} alt="" />
+							<button key={index} className="pb-5/4 relative bg-white rounded-lg focus:outline-none shadow-hero overflow-hidden trans-150">
+								<div className="py-2 absolute inset-0 flex flex-row justify-center">
+									<img class="object-contain object-top" src={editorSrc} alt="" />
 								</div>
 							</button>
 						))}
