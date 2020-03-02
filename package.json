@@ -18,6 +18,7 @@
     "start": "yarn react-scripts start",
     "prebuild": "yarn tailwind-prod",
     "build": "yarn react-scripts build",
+    "firebase-build-deploy": "yarn build && yarn firebase deploy && yarn tailwind-dev",
     "test": "yarn react-scripts test",
     "eject": "yarn react-scripts eject"
   },
@@ -39,6 +40,7 @@
   "devDependencies": {
     "@fullhuman/postcss-purgecss": "^2.1.0",
     "autoprefixer": "^9.7.4",
+    "firebase-tools": "^7.14.0",
     "postcss-cli": "^7.1.0",
     "tailwindcss": "^1.2.0",
     "use-methods": "^0.5.1"
