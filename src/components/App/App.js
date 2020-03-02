@@ -1,31 +1,19 @@
 import * as Hero from "components/Icons"
+import Container from "components/Container"
 import React from "react"
 import useMethods from "use-methods"
 
+// // TODO: Add event listener
 // ;(() => {
 // 	document.body.classList.add("debug-css")
 // })()
 
-const Container = props => (
-	<div className="mx-6 my-32 flex flex-row justify-center h-full">
-		<div className="w-full max-w-5xl">
-			{props.children}
-		</div>
-	</div>
-)
-
-/*
-
-New folder (folder)
-Upload (upload)
-Sort ascending / sort descending (sort-ascending, sort-descending)
-Show more documents / show less documents (plus-circle, plus-minus)
-
-*/
+const ITEMS_SHOWN_MIN = 2
+const ITEMS_SHOWN_MAX = 4
 
 const initialState = {
 	sortAscending: false,
-	itemsShown: 4,
+	itemsShown: 3,
 }
 
 const reducer = state => ({
@@ -33,7 +21,7 @@ const reducer = state => ({
 		state.sortAscending = !state.sortAscending
 	},
 	showLessItems() {
-		if (state.itemsShown === 1) {
+		if (state.itemsShown === 2) {
 			// No-op
 			return
 		}
@@ -48,8 +36,8 @@ const reducer = state => ({
 	},
 })
 
-const IconButton = ({ icon: Icon, ...props }) => (
-	<button className="p-2 text-indigo-500 focus:bg-indigo-100 hover:bg-indigo-100 active:bg-indigo-200 rounded-full focus:outline-none trans-300" {...props}>
+const IconButton = ({ className, icon: Icon, ...props }) => (
+	<button className={`p-2 text-indigo-500 focus:bg-indigo-100 hover:bg-indigo-100 active:bg-indigo-200 rounded-full focus:outline-none trans-300 ${className}`.trim()} {...props}>
 		<Icon className="w-6 h-6" />
 	</button>
 )
@@ -61,17 +49,15 @@ const App = props => {
 		<Container>
 			{/* Header */}
 			<div className="mb-12 flex flex-row justify-between items-center">
-				<div>
-					<p className="font-semibold text-4xl">
-						Your notes
-					</p>
-				</div>
+				<div />
 				<div className="-mx-1 flex flex-row">
 					<IconButton
+						className="hidden lg:block"
 						icon={Hero.Minus}
 						onClick={dispatch.showMoreItems}
 					/>
 					<IconButton
+						className="hidden lg:block"
 						icon={Hero.Plus}
 						onClick={dispatch.showLessItems}
 					/>
@@ -86,7 +72,7 @@ const App = props => {
 				</div>
 			</div>
 			{/* Cards */}
-			<div className={`grid grid-cols-${state.itemsShown} gap-6`}>
+			<div className={`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-${state.itemsShown} gap-6`}>
 				{[...new Array(20)].map((_, index) => (
 					<button key={index} className="pb-3/4 relative bg-indigo-100 hover:bg-indigo-200 rounded-lg focus:outline-none focus:shadow-outline trans-150">
 						<div className="absolute inset-0">
