@@ -8,6 +8,7 @@ module.exports = {
 				"2xl": "2rem",
 			},
 			boxShadow: {
+				"underline": "0px 2px currentColor",
 				"hero-sm": `
 					0 0 0 1px rgba(0, 0, 0, 0.05),
 					0 1px 2px 0 rgba(0, 0, 0, 0.05)
@@ -63,6 +64,13 @@ module.exports = {
 				"md-gray-700":  { default: "#616161" },
 				"md-gray-800":  { default: "#424242" },
 				"md-gray-900":  { default: "#212121" },
+			},
+			fontFamily: {
+				"dm-sans": "'DM Sans', sans-serif",
+			},
+			letterSpacing: {
+				"-px": "-0.0125em",
+				"px":  "0.0125em",
 			},
 			// https://youtube.com/watch?v=jl_tdhBxc_Y
 			spacing: {

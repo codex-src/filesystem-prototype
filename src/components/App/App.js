@@ -11,7 +11,7 @@ import useMethods from "use-methods"
 const ITEMS_SHOWN_DEFAULT = 4
 
 const ITEMS_SHOWN_MIN = 3
-const ITEMS_SHOWN_MAX = 6
+const ITEMS_SHOWN_MAX = 7
 
 const initialState = {
 	sortAscending: false,
@@ -39,8 +39,8 @@ const reducer = state => ({
 })
 
 const IconButton = ({ className, icon: Icon, ...props }) => (
-	<button className={`p-2 text-indigo-500 disabled:text-indigo-200 focus:bg-indigo-100 hover:bg-indigo-100 active:bg-indigo-200 rounded-full focus:outline-none trans-300 ${className || ""}`.trim()} {...props}>
-		<Icon className="w-6 h-6" />
+	<button className={`p-2 text-blue-500 disabled:text-blue-200 focus:bg-blue-100 hover:bg-blue-100 active:bg-blue-200 rounded-full focus:outline-none trans-300 ${className || ""}`.trim()} {...props}>
+		<Icon className="p-px w-6 h-6" />
 	</button>
 )
 
@@ -48,11 +48,22 @@ const App = props => {
 	const [state, dispatch] = useMethods(reducer, initialState)
 
 	return (
-		<Container>
+		<Container className="bg-gray-100">
 			{/* Header */}
 			<div className="flex flex-row justify-between items-center">
-				{/* TODO */}
-				<div />
+				<p className="flex flex-row items-center font-semibold text-lg tracking-px leading-none text-gray-800">
+					<a className="-mx-2 px-3 py-1 text-blue-500 hover:bg-blue-100 rounded-full trans-150">
+						Home
+					</a>
+					<Hero.CheveronRight className="w-6 h-6 text-gray-500" />
+					<a className="-mx-2 px-3 py-1 text-blue-500 hover:bg-blue-100 rounded-full trans-150">
+						Directory
+					</a>
+					<Hero.CheveronRight className="w-6 h-6 text-gray-500" />
+					<a className="-mx-2 px-3 py-1 text-blue-500 hover:bg-blue-100 rounded-full trans-150">
+						Subdirectory
+					</a>
+				</p>
 				<div className="-mx-1 flex flex-row">
 					<IconButton
 						className="hidden lg:block"
@@ -82,11 +93,24 @@ const App = props => {
 					{/* /> */}
 				</div>
 			</div>
+
+			<div className="h-6" />
+			<div className="grid grid-cols-6 gap-3">
+				{[...new Array(3)].map((_, index) => (
+					<div className="px-4 py-3 flex flex-row items-center bg-white rounded-lg shadow-hero">
+						<Hero.Folder className="mr-3 w-6 h-6 text-blue-500" />
+						<p className="font-semibold tracking-px leading-none text-gray-800">
+							Folder
+						</p>
+					</div>
+				))}
+			</div>
+
 			{/* Cards */}
-			<div className="h-12" />
+			<div className="h-6" />
 			<div className={`grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-${state.itemsShown} gap-6`}>
 				{[...new Array(60)].map((_, index) => (
-					<button key={index} className="pb-3/4 relative bg-indigo-100 hover:bg-indigo-200 rounded-lg focus:outline-none focus:shadow-outline trans-150">
+					<button key={index} className="pb-3/4 relative bg-white rounded-xl focus:outline-none shadow-hero trans-150">
 						<div className="absolute inset-0">
 
 						</div>

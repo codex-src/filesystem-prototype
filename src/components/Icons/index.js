@@ -1,3 +1,4 @@
+export { ReactComponent as CheveronRight } from "./cheveron-right.svg"
 export { ReactComponent as Download } from "./download.svg"
 export { ReactComponent as Folder } from "./folder.svg"
 export { ReactComponent as Minus } from "./minus.svg"
