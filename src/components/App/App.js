@@ -73,11 +73,13 @@ const App = props => {
 								<span className="text-blue-500 hover:text-blue-500 trans-150 cursor-pointer">
 									Folder
 								</span>
-								<span className="mx-2 text-gray-500">/</span>
+								{/* <span className="mx-2 text-gray-500">/</span> */}
+								<Hero.CheveronRight className="p-px w-6 h-6 text-gray-400" />
 								<span className="text-blue-500 hover:text-blue-500 trans-150 cursor-pointer">
 									Nested folder
 								</span>
-								<span className="mx-2 text-gray-500">/</span>
+								{/* <span className="mx-2 text-gray-500">/</span> */}
+								<Hero.CheveronRight className="p-px w-6 h-6 text-gray-400" />
 								<span className="text-blue-500 hover:text-blue-500 trans-150 cursor-pointer">
 									Deeply nested folder
 								</span>
@@ -112,24 +114,14 @@ const App = props => {
 			<div className="h-6" />
 			<div className="flex flex-row justify-center">
 				<div className="px-6 w-full max-w-5xl">
-					{/* <div className="-mb-3 flex flex-row flex-wrap"> */}
-					{/* 	{["Folder", "Second folder", "Third folder", "Fourth folder", "Fifth folder", "Sixth folder", "Eigth folder", "Ninth folder", "Tenth folder", ].map((each, index) => ( */}
-					{/* 		<div key={index} className="mr-3 mb-3 px-4 py-3 flex flex-row items-center w-full sm:w-auto bg-white rounded-lg shadow-hero" style={{ minWidth: 128 }}> */}
-					{/* 			<Hero.Folder className="mr-3 p-px w-6 h-6 text-blue-500" /> */}
-					{/* 			<p className="whitespace-pre truncate font-semibold tracking-px text-gray-800"> */}
-					{/* 				{each} */}
-					{/* 			</p> */}
-					{/* 		</div> */}
-					{/* 	))} */}
-					{/* </div> */}
 					<div className="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3">
 						{["This is a really long folder name", "Second folder", "Third folder", "Fourth folder", "Fifth folder", "Sixth folder", "Eigth folder", "Ninth folder", "Tenth folder", ].map((each, index) => (
-							<div key={index} className="px-4 py-3 flex flex-row items-center bg-white rounded-lg shadow-hero">
+							<button key={index} className="px-4 py-3 flex flex-row items-center bg-white rounded-lg shadow-hero">
 								<Hero.Folder className="mr-3 p-px flex-shrink-0 w-6 h-6 text-blue-500" />
 								<p className="whitespace-pre truncate font-semibold tracking-px text-gray-800">
 									{each}
 								</p>
-							</div>
+							</button>
 						))}
 					</div>
 					<div className="h-6" />
