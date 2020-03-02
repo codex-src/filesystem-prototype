@@ -70,19 +70,17 @@ const App = props => {
 					<div className="px-6 w-full max-w-5xl">
 						<div className="flex flex-row justify-between items-center">
 							<p className="flex flex-row items-center font-semibold tracking-px text-gray-800">
-								<span className="text-blue-500 hover:text-blue-500 trans-150 cursor-pointer">
+								<button className="text-blue-500 hover:text-blue-500 trans-150 cursor-pointer" style={{ fontWeight: "inherit", letterSpacing: "inherit" }}>
 									Folder
-								</span>
-								{/* <span className="mx-2 text-gray-500">/</span> */}
+								</button>
 								<Hero.CheveronRight className="p-px w-6 h-6 text-gray-400" />
-								<span className="text-blue-500 hover:text-blue-500 trans-150 cursor-pointer">
+								<button className="text-blue-500 hover:text-blue-500 trans-150 cursor-pointer" style={{ fontWeight: "inherit", letterSpacing: "inherit" }}>
 									Nested folder
-								</span>
-								{/* <span className="mx-2 text-gray-500">/</span> */}
+								</button>
 								<Hero.CheveronRight className="p-px w-6 h-6 text-gray-400" />
-								<span className="text-blue-500 hover:text-blue-500 trans-150 cursor-pointer">
+								<button className="text-blue-500 hover:text-blue-500 trans-150 cursor-pointer" style={{ fontWeight: "inherit", letterSpacing: "inherit" }}>
 									Deeply nested folder
-								</span>
+								</button>
 							</p>
 							<div className="-mx-1 flex flex-row">
 								<IconButton
