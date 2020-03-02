@@ -94,8 +94,8 @@ module.exports = {
 		},
 	},
 	variants: {
-		color:           ["responsive", "hover", "focus", "active"],
-		backgroundColor: ["responsive", "hover", "focus", "active"],
+		textColor:       ["responsive", "disabled", "hover", "focus", "active"],
+		backgroundColor: ["responsive", "disabled", "hover", "focus", "active"],
 	},
 	plugins: [],
 }
