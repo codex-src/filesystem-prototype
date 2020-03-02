@@ -113,7 +113,7 @@ const App = props => {
 			<div className="flex flex-row justify-center">
 				<div className="px-6 w-full max-w-5xl">
 					<div className="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3">
-						{["This is a really long folder name", "Second folder", "Third folder", "Fourth folder", "Fifth folder", "Sixth folder", "Eigth folder", "Ninth folder", "Tenth folder", ].map((each, index) => (
+						{["This is a really long folder name", "Second folder", "Third folder", "Fourth folder", "Fifth folder", "Sixth folder", "Eigth folder", "Ninth folder"].map((each, index) => (
 							<button key={index} className="px-4 py-3 flex flex-row items-center bg-white rounded-lg shadow-hero">
 								<Hero.Folder className="mr-3 p-px flex-shrink-0 w-6 h-6 text-blue-500" />
 								<p className="whitespace-pre truncate font-semibold tracking-px text-gray-800">
@@ -121,6 +121,12 @@ const App = props => {
 								</p>
 							</button>
 						))}
+						<button className="px-4 py-3 flex flex-row items-center bg-gray-100 rounded-lg">
+							<Hero.Plus className="mr-3 p-px flex-shrink-0 w-6 h-6 text-blue-500" />
+							<p className="whitespace-pre truncate font-semibold tracking-px text-blue-500">
+								Add a folder
+							</p>
+						</button>
 					</div>
 					<div className="h-6" />
 					<div className={`grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-${state.itemsShown} gap-6`}>
