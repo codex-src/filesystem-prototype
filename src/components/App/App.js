@@ -68,8 +68,7 @@ const App = props => {
 			<div ref={ref} className="-mt-6 py-6 sticky inset-x-0 top-0 bg-white z-30 trans-300">
 				<div className="flex flex-row justify-center">
 					<div className="px-6 w-full max-w-5xl">
-
-						<div className="mb-3 flex flex-row justify-between items-center">
+						<div className="flex flex-row justify-between items-center">
 							<p className="-mx-1 flex flex-row items-center font-semibold text-lg tracking-px text-gray-800">
 								<span className="mx-1 text-blue-500 hover:text-blue-500 trans-150 cursor-pointer">
 									Folder
@@ -106,33 +105,38 @@ const App = props => {
 								/>
 							</div>
 						</div>
-						<div className="mt-3 grid grid-cols-1 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3">
-							{["Folder", "Second folder", "Third folder"].map((each, index) => (
-								<div key={index} className="px-4 py-3 flex flex-row items-center bg-white rounded-lg shadow-hero">
-									<Hero.Folder className="mr-3 p-px w-6 h-6 text-blue-500" />
-									<p className="whitespace-pre truncate font-semibold tracking-px text-gray-800">
-										{each}
-									</p>
-								</div>
-							))}
-						</div>
 					</div>
 				</div>
 			</div>
 
+			<div className="h-6" />
 			<div className="flex flex-row justify-center">
 				<div className="px-6 w-full max-w-5xl">
-					<div className={`mt-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-${state.itemsShown} gap-6`}>
-						{[...new Array(60)].map((_, index) => (
-							<button key={index} className="pb-5/4 relative bg-white rounded-lg focus:outline-none shadow-hero overflow-hidden trans-150">
-								<div className="absolute inset-0 flex flex-row justify-center">
-									<img class="py-2 object-contain object-top" src={editorSrc} alt="" />
-								</div>
-							</button>
+					<div className={`grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-${state.itemsShown} gap-6`}>
+						{[...new Array(30)].map((_, index) => (
+							!(index % 5) ? (
+								<button key={index} className="pb-4/5 relative bg-white rounded-xl focus:outline-none shadow-hero">
+									<div className="m-6 absolute inset-0 flex flex-row justify-center items-center">
+										<div className="flex flex-col items-center">
+											<Hero.Folder className="mb-3 p-px w-10 h-10 text-blue-500" />
+											<p className="font-semibold text-lg tracking-px leading-snug text-gray-800">
+												How to build a beautiful blog from scratch
+											</p>
+										</div>
+									</div>
+								</button>
+							) : (
+								<button key={index} className="pb-4/5 relative bg-white rounded-xl focus:outline-none shadow-hero overflow-hidden">
+									<div className="absolute inset-0 flex flex-row justify-center">
+										<img class="py-2 object-contain object-top" src={editorSrc} alt="" />
+									</div>
+								</button>
+							)
 						))}
 					</div>
 				</div>
 			</div>
+			<div className="h-32" />
 
 		</div>
 		// </Container>
