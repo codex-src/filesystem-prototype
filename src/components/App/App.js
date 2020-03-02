@@ -24,10 +24,14 @@ Show more documents / show less documents (plus-circle, plus-minus)
 */
 
 const initialState = {
+	sortAscending: false,
 	itemsShown: 4,
 }
 
 const reducer = state => ({
+	toggleSortDirection() {
+		state.sortAscending = !state.sortAscending
+	},
 	showLessItems() {
 		if (state.itemsShown === 1) {
 			// No-op
@@ -45,9 +49,9 @@ const reducer = state => ({
 })
 
 const IconButton = ({ icon: Icon, ...props }) => (
-	<div className="p-2 text-indigo-500 hover:bg-indigo-100 active:bg-indigo-200 rounded-full trans-300" {...props}>
+	<button className="p-2 text-indigo-500 focus:bg-indigo-100 focus:outline-none hover:bg-indigo-100 active:bg-indigo-200 rounded-full trans-300" {...props}>
 		<Icon className="w-6 h-6" />
-	</div>
+	</button>
 )
 
 const App = props => {
@@ -72,8 +76,8 @@ const App = props => {
 						onClick={dispatch.showLessItems}
 					/>
 					<IconButton
-						icon={Hero.SortDescending}
-						// onClick={dispatch.showMoreItems}
+						icon={!state.sortAscending ? Hero.SortDescending : Hero.SortAscending}
+						onClick={dispatch.toggleSortDirection}
 					/>
 					<IconButton
 						icon={Hero.Folder}
