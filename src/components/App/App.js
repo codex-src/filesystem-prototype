@@ -70,7 +70,7 @@ const App = props => {
 					<div className="px-6 w-full max-w-5xl">
 						<div className="flex flex-row justify-between items-center">
 							<div className="flex flex-row items-center">
-								<Hero.CheveronLeftOutline className="mr-3 p-px w-8 h-8 text-blue-500" />
+								{/* <Hero.CheveronLeftOutline className="mr-3 p-px w-8 h-8 text-blue-500" /> */}
 								<p className="flex flex-row items-center font-semibold text-lg tracking-px text-gray-800">
 									<button className="text-blue-500 hover:text-blue-500 trans-150">
 										Home
@@ -124,17 +124,16 @@ const App = props => {
 								</p>
 							</button>
 						))}
-						<button className="px-4 py-3 flex flex-row items-center bg-gray-100 rounded-lg">
-							<Hero.PlusSolid className="mr-3 p-px flex-shrink-0 w-6 h-6 text-blue-500" />
-							<p className="whitespace-pre truncate font-semibold tracking-px text-blue-500">
-								Add a folder
-							</p>
+						<button className="flex flex-row">
+							<div className="px-3 py-3 h-full bg-gray-100 rounded-xl">
+								<Hero.PlusSolid className="p-px w-6 h-6 text-blue-500" />
+							</div>
 						</button>
 					</div>
 					<div className="h-6" />
 					<div className={`grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-${state.itemsShown} gap-6`}>
 						{[...new Array(60)].map((_, index) => (
-							<button key={index} className="pb-4/5 relative bg-white rounded-xl shadow-hero overflow-hidden">
+							<button key={index} className="pb-4/5 relative bg-white rounded-lg shadow-hero overflow-hidden">
 								<div className="absolute inset-0 flex flex-row justify-center">
 									<img className="py-2 object-contain object-top" src={editorSrc} alt="" />
 								</div>
