@@ -39,7 +39,7 @@ const reducer = state => ({
 	},
 })
 
-const IconButton = ({ className, icon: Icon, ...props }) => (
+const ButtonIcon = ({ className, icon: Icon, ...props }) => (
 	<button className={`p-2 text-blue-500 disabled:text-gray-500 disabled:bg-transparent hover:bg-blue-100 focus:bg-blue-100 active:bg-blue-200 rounded-full focus:outline-none trans-300 ${className || ""}`.trim()} {...props}>
 		<Icon className="p-px w-6 h-6" />
 	</button>
@@ -69,37 +69,37 @@ const App = props => {
 				<div className="flex flex-row justify-center">
 					<div className="px-6 w-full max-w-5xl">
 						<div className="flex flex-row justify-between items-center">
-							<p className="flex flex-row items-center font-semibold tracking-px text-gray-800">
-								<button className="text-blue-500 hover:text-blue-500 trans-150 cursor-pointer" style={{ fontWeight: "inherit", letterSpacing: "inherit" }}>
+							<p className="flex flex-row items-center font-semibold text-lg tracking-px text-gray-800">
+								<button className="text-blue-500 hover:text-blue-500 trans-150">
+									Home
+								</button>
+								<Hero.CheveronRight className="p-px w-6 h-6 text-gray-400" />
+								<button className="text-blue-500 hover:text-blue-500 trans-150">
 									Folder
 								</button>
 								<Hero.CheveronRight className="p-px w-6 h-6 text-gray-400" />
-								<button className="text-blue-500 hover:text-blue-500 trans-150 cursor-pointer" style={{ fontWeight: "inherit", letterSpacing: "inherit" }}>
+								<button className="text-blue-500 hover:text-blue-500 trans-150">
 									Nested folder
-								</button>
-								<Hero.CheveronRight className="p-px w-6 h-6 text-gray-400" />
-								<button className="text-blue-500 hover:text-blue-500 trans-150 cursor-pointer" style={{ fontWeight: "inherit", letterSpacing: "inherit" }}>
-									Deeply nested folder
 								</button>
 							</p>
 							<div className="-mx-1 flex flex-row">
-								<IconButton
+								<ButtonIcon
 									className="hidden lg:block"
 									icon={Hero.Minus}
 									disabled={state.itemsShown === ITEMS_SHOWN_MIN}
 									onClick={dispatch.showLessItems}
 								/>
-								<IconButton
+								<ButtonIcon
 									className="hidden lg:block"
 									icon={Hero.Plus}
 									disabled={state.itemsShown === ITEMS_SHOWN_MAX}
 									onClick={dispatch.showMoreItems}
 								/>
-								<IconButton
+								<ButtonIcon
 									icon={!state.sortAscending ? Hero.SortDescending : Hero.SortAscending}
 									onClick={dispatch.toggleSortDirection}
 								/>
-								<IconButton
+								<ButtonIcon
 									icon={Hero.SwitchVertical}
 									// TODO
 								/>
@@ -125,7 +125,7 @@ const App = props => {
 					<div className="h-6" />
 					<div className={`grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-${state.itemsShown} gap-6`}>
 						{[...new Array(60)].map((_, index) => (
-							<button key={index} className="pb-4/5 relative bg-white rounded-xl focus:outline-none shadow-hero overflow-hidden">
+							<button key={index} className="pb-4/5 relative bg-white rounded-xl shadow-hero overflow-hidden">
 								<div className="absolute inset-0 flex flex-row justify-center">
 									<img class="py-2 object-contain object-top" src={editorSrc} alt="" />
 								</div>
