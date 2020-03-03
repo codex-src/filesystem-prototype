@@ -119,7 +119,7 @@ const App = props => {
 				<div className="px-6 w-full max-w-5xl">
 					<div className="grid grid-cols-2 lg:grid-cols-5 gap-3">
 						{["This is a really long folder name", "Second folder", "Third folder"].map((each, index) => (
-							<button key={index} className="px-4 py-3 flex flex-row items-center bg-white rounded-lg shadow-hero">
+							<button key={index} className="px-4 py-3 flex flex-row items-center bg-white hover:bg-gray-100 rounded-lg shadow-hero trans-150">
 								<Hero.FolderSolid className="mr-3 p-px flex-shrink-0 w-6 h-6 text-md-blue-a200" />
 								<p className="whitespace-pre truncate font-medium tracking-px text-gray-800">
 									{each}
@@ -134,7 +134,7 @@ const App = props => {
 					</div>
 					<div className="h-6" />
 					<div className={`grid grid-cols-2 lg:grid-cols-${state.itemsShown} gap-6`}>
-						<button className="pb-3/4 relative bg-gray-100 rounded-xl focus:outline-none trans-300">
+						<button className="pb-3/4 relative bg-white hover:bg-gray-100 rounded-xl focus:outline-none shadow-hero trans-150">
 							<div className="absolute inset-0 flex flex-row justify-center items-center">
 								<button className="-mt-3 !p-2 !hover:bg-indigo-100 rounded-full !focus:bg-blue-100 focus:outline-none transform scale-150 !trans-300">
 									<Hero.PlusSolid className="p-px w-6 h-6 text-md-blue-a200" />
@@ -142,7 +142,7 @@ const App = props => {
 							</div>
 						</button>
 						{[...new Array(60)].map((_, index) => (
-							<button key={index} className="pb-3/4 relative bg-white rounded-lg shadow-hero overflow-hidden">
+							<button key={index} className="pb-3/4 relative bg-white hover:bg-gray-100 rounded-lg shadow-hero overflow-hidden trans-150">
 								<div className="absolute inset-0 flex flex-row justify-center">
 									<img className="py-2 object-contain object-top opacity-90" src={editorSrc} alt="" />
 								</div>
