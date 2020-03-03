@@ -11,7 +11,7 @@ import editorSrc from "images/editor.png" // Tell webpack this JS file uses this
 
 const ITEMS_SHOWN_DEFAULT = 3
 
-const ITEMS_SHOWN_MIN = 3
+const ITEMS_SHOWN_MIN = 2
 const ITEMS_SHOWN_MAX = 5
 
 const initialState = {
@@ -108,6 +108,16 @@ const App = props => {
 									icon={Hero.SwitchVerticalOutline}
 									onClick={dispatch.toggleScrollEnabled}
 								/>
+								<ButtonIcon
+									// className={!state.scrollEnabled ? "" : "bg-blue-100"}
+									icon={Hero.FolderOutline}
+									// onClick={dispatch.toggleScrollEnabled}
+								/>
+								<ButtonIcon
+									// className={!state.scrollEnabled ? "" : "bg-blue-100"}
+									icon={Hero.CloudUploadOutline}
+									// onClick={dispatch.toggleScrollEnabled}
+								/>
 							</div>
 						</div>
 					</div>
@@ -117,7 +127,7 @@ const App = props => {
 			<div className="h-6" />
 			<div className="flex flex-row justify-center">
 				<div className="px-6 w-full max-w-5xl">
-					<div className="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3">
+					<div className="grid grid-cols-2 lg:grid-cols-5 gap-3">
 						{["This is a really long folder name", "Second folder", "Third folder"].map((each, index) => (
 							<button key={index} className="px-4 py-3 flex flex-row items-center bg-white rounded-lg shadow-hero">
 								<Hero.FolderSolid className="mr-3 p-px flex-shrink-0 w-6 h-6 text-md-blue-a200" />
@@ -126,14 +136,14 @@ const App = props => {
 								</p>
 							</button>
 						))}
-						<div className="flex flex-row items-center">
+						<div className="hidden lg:flex lg:flex-row lg:items-center">
 							<button className="p-2 hover:bg-indigo-100 rounded-full focus:bg-blue-100 focus:outline-none trans-300">
 								<Hero.PlusSolid className="p-px w-6 h-6 text-md-blue-a200" />
 							</button>
 						</div>
 					</div>
 					<div className="h-6" />
-					<div className={`grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-${state.itemsShown} gap-6`}>
+					<div className={`grid grid-cols-2 lg:grid-cols-${state.itemsShown} gap-6`}>
 						<button className="pb-5/4 relative bg-white rounded-xl focus:outline-none shadow-hero trans-300">
 							<div className="absolute inset-0 flex flex-row justify-center items-center">
 								<button className="-mt-12 p-2 hover:bg-indigo-100 rounded-full focus:bg-blue-100 focus:outline-none transform scale-150 trans-300">
@@ -144,7 +154,7 @@ const App = props => {
 						{[...new Array(60)].map((_, index) => (
 							<button key={index} className="pb-5/4 relative bg-white rounded-lg shadow-hero overflow-hidden">
 								<div className="absolute inset-0 flex flex-row justify-center">
-									<img className="py-2 object-contain object-top" src={editorSrc} alt="" />
+									<img className="py-2 object-contain object-top opacity-90" src={editorSrc} alt="" />
 								</div>
 							</button>
 						))}
