@@ -73,7 +73,7 @@ const App = props => {
 				<div className="flex flex-row justify-center">
 					<div className="px-6 w-full max-w-5xl">
 						<div className="flex flex-row justify-between items-center">
-							<p className="flex flex-row items-center font-medium text-lg tracking-px text-gray-800">
+							<p className="flex flex-row items-center font-semibold text-lg tracking-px text-gray-800">
 								<button className="max-w-16 sm:max-w-32 md:max-w-48 lg:max-w-64 whitespace-pre truncate text-md-blue-a200 hover:text-md-blue-a200">
 									Zaydek’s Codex
 								</button>
@@ -136,7 +136,7 @@ const App = props => {
 					</div>
 					<div className="h-6" />
 					<div className={`grid grid-cols-2 lg:grid-cols-${state.itemsShown} gap-6`}>
-						<button className="pb-3/4 relative bg-white hover:bg-gray-100 rounded-xl focus:outline-none shadow-hero trans-150">
+						<button className="pb-2/3 relative bg-white hover:bg-gray-100 rounded-xl focus:outline-none shadow-hero trans-150">
 							<div className="absolute inset-0 flex flex-row justify-center items-center">
 								<button className="-mt-3 !p-2 !hover:bg-indigo-100 rounded-full !focus:bg-blue-100 focus:outline-none transform scale-150 !trans-300">
 									<Hero.PlusSolid className="p-px w-6 h-6 text-md-blue-a200" />
@@ -144,9 +144,9 @@ const App = props => {
 							</div>
 						</button>
 						{[...new Array(60)].map((_, index) => (
-							<button key={index} className="pb-3/4 relative bg-white hover:bg-gray-100 rounded-lg shadow-hero overflow-hidden trans-150">
+							<button key={index} className="pb-2/3 relative bg-white hover:bg-gray-100 rounded-lg shadow-hero overflow-hidden trans-150">
 								<div className="absolute inset-0 flex flex-row justify-center">
-									<img className="py-2 object-contain object-top opacity-90" src={editorSrc} alt="" />
+									<img className="py-1 object-cover object-top opacity-90" src={editorSrc} alt="" />
 								</div>
 							</button>
 						))}
