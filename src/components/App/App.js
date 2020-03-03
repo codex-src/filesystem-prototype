@@ -56,7 +56,7 @@ const App = props => {
 
 	React.useEffect(() => {
 		window.addEventListener("scroll", e => {
-			if (window.scrollY < ((32 * 4) - (6 * 4))) {
+			if (window.scrollY < 128 - 12) {
 				ref.current.classList.remove("shadow-hero")
 			} else {
 				ref.current.classList.add("shadow-hero")
