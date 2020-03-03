@@ -57,9 +57,9 @@ const App = props => {
 	React.useEffect(() => {
 		window.addEventListener("scroll", e => {
 			if (window.scrollY < ((32 * 4) - (6 * 4))) {
-				ref.current.classList.remove("shadow")
+				ref.current.classList.remove("shadow-hero")
 			} else {
-				ref.current.classList.add("shadow")
+				ref.current.classList.add("shadow-hero")
 			}
 		}, false)
 	}, [])
@@ -134,14 +134,11 @@ const App = props => {
 					</div>
 					<div className="h-6" />
 					<div className={`grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-${state.itemsShown} gap-6`}>
-						<button className="pb-5/4 relative hover:bg-indigo-100 rounded-xl focus:outline-none shadow-2px trans-300">
-							<div className="absolute inset-0 flex flex-row justify-center">
-								<div className="absolute inset-0 flex flex-col justify-center items-center">
-									<Hero.PlusOutline className="-mt-8 p-px w-8 h-8 text-md-blue-a200" />
-									{/* <p className="font-medium text-2xl tracking-px text-md-blue-a200"> */}
-									{/* 	New note */}
-									{/* </p> */}
-								</div>
+						<button className="pb-5/4 relative bg-white rounded-xl focus:outline-none shadow-hero trans-300">
+							<div className="absolute inset-0 flex flex-row justify-center items-center">
+								<button className="-mt-12 p-2 hover:bg-indigo-100 rounded-full focus:bg-blue-100 focus:outline-none transform scale-150 trans-300">
+									<Hero.PlusOutline className="p-px w-6 h-6 text-md-blue-a200" />
+								</button>
 							</div>
 						</button>
 						{[...new Array(60)].map((_, index) => (
