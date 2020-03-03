@@ -44,7 +44,7 @@ const reducer = state => ({
 })
 
 const ButtonIcon = ({ className, icon: Icon, ...props }) => (
-	<button className={`p-2 text-md-blue-a200 disabled:text-gray-500 disabled:bg-transparent hover:bg-blue-100 focus:bg-blue-100 active:bg-blue-200 rounded-full focus:outline-none trans-300 ${className || ""}`.trim()} {...props}>
+	<button className={`p-2 text-md-blue-a200 disabled:text-gray-400 disabled:bg-transparent hover:bg-blue-100 focus:bg-blue-100 active:bg-blue-200 rounded-full focus:outline-none trans-300 ${className || ""}`.trim()} {...props}>
 		<Icon className="p-px w-6 h-6" />
 	</button>
 )
@@ -74,16 +74,16 @@ const App = props => {
 					<div className="px-6 w-full max-w-5xl">
 						<div className="flex flex-row justify-between items-center">
 							<p className="flex flex-row items-center font-medium text-lg tracking-px text-gray-800">
-								<button className="text-md-blue-a200 hover:text-md-blue-a200 trans-150">
+								<button className="whitespace-pre truncate text-md-blue-a200 hover:text-md-blue-a200 trans-150">
 									Zaydek’s Codex
 								</button>
 								<Hero.CheveronRightSolid className="mx-px mt-px p-px w-6 h-6 text-gray-400" />
-								<button className="text-md-blue-a200 hover:text-md-blue-a200 trans-150">
+								<button className="whitespace-pre truncate text-md-blue-a200 hover:text-md-blue-a200 trans-150">
 									Directory
 								</button>
 								<Hero.CheveronRightSolid className="mx-px mt-px p-px w-6 h-6 text-gray-400" />
-								<button className="text-md-blue-a200 hover:text-md-blue-a200 trans-150">
-									Subdirectory
+								<button className="whitespace-pre truncate text-md-blue-a200 hover:text-md-blue-a200 trans-150">
+									Subdirectory asd asd asds
 								</button>
 							</p>
 							<div className="-mx-1 flex flex-row">
@@ -107,16 +107,6 @@ const App = props => {
 									className={!state.scrollEnabled ? "" : "bg-blue-100"}
 									icon={Hero.SwitchVerticalSolid}
 									onClick={dispatch.toggleScrollEnabled}
-								/>
-								<ButtonIcon
-									// className={!state.scrollEnabled ? "" : "bg-blue-100"}
-									icon={Hero.FolderSolid}
-									// onClick={dispatch.toggleScrollEnabled}
-								/>
-								<ButtonIcon
-									// className={!state.scrollEnabled ? "" : "bg-blue-100"}
-									icon={Hero.UploadSolid}
-									// onClick={dispatch.toggleScrollEnabled}
 								/>
 							</div>
 						</div>
