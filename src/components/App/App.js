@@ -74,15 +74,15 @@ const App = props => {
 					<div className="px-6 w-full max-w-5xl">
 						<div className="flex flex-row justify-between items-center">
 							<p className="flex flex-row items-center font-medium text-lg tracking-px text-gray-800">
-								<button className="whitespace-pre truncate text-md-blue-a200 hover:text-md-blue-a200 trans-150">
+								<button className="max-w-24 whitespace-pre truncate text-md-blue-a200 hover:text-md-blue-a200 trans-150">
 									Zaydek’s Codex
 								</button>
 								<Hero.CheveronRightSolid className="mx-px mt-px p-px w-6 h-6 text-gray-400" />
-								<button className="whitespace-pre truncate text-md-blue-a200 hover:text-md-blue-a200 trans-150">
+								<button className="max-w-24 whitespace-pre truncate text-md-blue-a200 hover:text-md-blue-a200 trans-150">
 									Directory
 								</button>
 								<Hero.CheveronRightSolid className="mx-px mt-px p-px w-6 h-6 text-gray-400" />
-								<button className="whitespace-pre truncate text-md-blue-a200 hover:text-md-blue-a200 trans-150">
+								<button className="max-w-24 whitespace-pre truncate text-md-blue-a200 hover:text-md-blue-a200 trans-150">
 									Subdirectory asd asd asds
 								</button>
 							</p>

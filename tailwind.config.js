@@ -145,8 +145,9 @@ module.exports = {
 		},
 	},
 	variants: {
-		textColor:       ["responsive", "hover", "focus", "active", "disabled"],
 		backgroundColor: ["responsive", "hover", "focus", "active", "disabled"],
+		maxWidth:        ["responsive"],
+		textColor:       ["responsive", "hover", "focus", "active", "disabled"],
 	},
 	plugins: [],
 }
