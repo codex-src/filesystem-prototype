@@ -12,7 +12,7 @@ import editorSrc from "images/editor.png" // Tell webpack this JS file uses this
 const ITEMS_SHOWN_DEFAULT = 3
 
 const ITEMS_SHOWN_MIN = 2
-const ITEMS_SHOWN_MAX = 5
+const ITEMS_SHOWN_MAX = 4
 
 const initialState = {
 	itemsShown: ITEMS_SHOWN_DEFAULT,
@@ -77,11 +77,11 @@ const App = props => {
 								<button className="max-w-16 sm:max-w-32 md:max-w-48 lg:max-w-64 whitespace-pre truncate text-md-blue-a200 hover:text-md-blue-a200 trans-150">
 									Zaydek’s Codex
 								</button>
-								<Hero.CheveronRightSolid className="mx-px mt-px p-px w-6 h-6 text-gray-400" />
+								<Hero.CheveronRightSolid className="mx-1 mt-px p-px w-6 h-6 text-gray-400" />
 								<button className="max-w-24 sm:max-w-24 md:max-w-32 lg:max-w-48 whitespace-pre truncate text-md-blue-a200 hover:text-md-blue-a200 trans-150">
 									Directory
 								</button>
-								<Hero.CheveronRightSolid className="mx-px mt-px p-px w-6 h-6 text-gray-400" />
+								<Hero.CheveronRightSolid className="mx-1 mt-px p-px w-6 h-6 text-gray-400" />
 								<button className="max-w-16 sm:max-w-32 md:max-w-48 lg:max-w-64 whitespace-pre truncate text-md-blue-a200 hover:text-md-blue-a200 trans-150">
 									Subdirectory
 								</button>
@@ -134,15 +134,15 @@ const App = props => {
 					</div>
 					<div className="h-6" />
 					<div className={`grid grid-cols-2 lg:grid-cols-${state.itemsShown} gap-6`}>
-						<button className="pb-5/4 relative bg-white rounded-xl focus:outline-none shadow-hero trans-300">
+						<button className="pb-3/4 relative bg-gray-100 rounded-xl focus:outline-none trans-300">
 							<div className="absolute inset-0 flex flex-row justify-center items-center">
-								<button className="-mt-12 p-2 hover:bg-indigo-100 rounded-full focus:bg-blue-100 focus:outline-none transform scale-150 trans-300">
+								<button className="-mt-3 !p-2 !hover:bg-indigo-100 rounded-full !focus:bg-blue-100 focus:outline-none transform scale-150 !trans-300">
 									<Hero.PlusSolid className="p-px w-6 h-6 text-md-blue-a200" />
 								</button>
 							</div>
 						</button>
 						{[...new Array(60)].map((_, index) => (
-							<button key={index} className="pb-5/4 relative bg-white rounded-lg shadow-hero overflow-hidden">
+							<button key={index} className="pb-3/4 relative bg-white rounded-lg shadow-hero overflow-hidden">
 								<div className="absolute inset-0 flex flex-row justify-center">
 									<img className="py-2 object-contain object-top opacity-90" src={editorSrc} alt="" />
 								</div>
