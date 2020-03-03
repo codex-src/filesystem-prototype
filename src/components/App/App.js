@@ -77,11 +77,11 @@ const App = props => {
 								<button className="text-md-blue-a200 hover:text-md-blue-a200 trans-150">
 									Zaydek’s Codex
 								</button>
-								<Hero.CheveronRightOutline className="mx-px mt-px p-px w-6 h-6 text-gray-400" />
+								<Hero.CheveronRightSolid className="mx-px mt-px p-px w-6 h-6 text-gray-400" />
 								<button className="text-md-blue-a200 hover:text-md-blue-a200 trans-150">
 									Directory
 								</button>
-								<Hero.CheveronRightOutline className="mx-px mt-px p-px w-6 h-6 text-gray-400" />
+								<Hero.CheveronRightSolid className="mx-px mt-px p-px w-6 h-6 text-gray-400" />
 								<button className="text-md-blue-a200 hover:text-md-blue-a200 trans-150">
 									Subdirectory
 								</button>
@@ -89,33 +89,33 @@ const App = props => {
 							<div className="-mx-1 flex flex-row">
 								<ButtonIcon
 									className="hidden lg:block"
-									icon={Hero.ZoomOutOutline}
+									icon={Hero.PlusCircleSolid}
 									disabled={state.itemsShown === ITEMS_SHOWN_MAX}
 									onClick={dispatch.showMoreItems}
 								/>
 								<ButtonIcon
 									className="hidden lg:block"
-									icon={Hero.ZoomInOutline}
+									icon={Hero.MinusCircleSolid}
 									disabled={state.itemsShown === ITEMS_SHOWN_MIN}
 									onClick={dispatch.showLessItems}
 								/>
 								<ButtonIcon
-									icon={!state.sortAscending ? Hero.SortDescendingOutline : Hero.SortAscendingOutline}
+									icon={!state.sortAscending ? Hero.SortDescendingSolid : Hero.SortAscendingSolid}
 									onClick={dispatch.toggleSortDirection}
 								/>
 								<ButtonIcon
 									className={!state.scrollEnabled ? "" : "bg-blue-100"}
-									icon={Hero.SwitchVerticalOutline}
+									icon={Hero.SwitchVerticalSolid}
 									onClick={dispatch.toggleScrollEnabled}
 								/>
 								<ButtonIcon
 									// className={!state.scrollEnabled ? "" : "bg-blue-100"}
-									icon={Hero.FolderOutline}
+									icon={Hero.FolderSolid}
 									// onClick={dispatch.toggleScrollEnabled}
 								/>
 								<ButtonIcon
 									// className={!state.scrollEnabled ? "" : "bg-blue-100"}
-									icon={Hero.CloudUploadOutline}
+									icon={Hero.UploadSolid}
 									// onClick={dispatch.toggleScrollEnabled}
 								/>
 							</div>
@@ -147,7 +147,7 @@ const App = props => {
 						<button className="pb-5/4 relative bg-white rounded-xl focus:outline-none shadow-hero trans-300">
 							<div className="absolute inset-0 flex flex-row justify-center items-center">
 								<button className="-mt-12 p-2 hover:bg-indigo-100 rounded-full focus:bg-blue-100 focus:outline-none transform scale-150 trans-300">
-									<Hero.PlusOutline className="p-px w-6 h-6 text-md-blue-a200" />
+									<Hero.PlusSolid className="p-px w-6 h-6 text-md-blue-a200" />
 								</button>
 							</div>
 						</button>
